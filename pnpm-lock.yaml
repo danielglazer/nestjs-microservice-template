@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@fastify/compress': ^6.1.1
+  '@fastify/helmet': ^10.0.2
   '@nestjs/cli': ^9.0.0
   '@nestjs/common': ^9.0.0
   '@nestjs/core': ^9.0.0
@@ -32,6 +33,7 @@ specifiers:
 
 dependencies:
   '@fastify/compress': 6.1.1
+  '@fastify/helmet': 10.0.2
   '@nestjs/common': 9.1.4_c667cf017b020ad25d054a461e0ef748
   '@nestjs/core': 9.1.4_f157c8bafd715dbc6747fd14f6e37af8
   '@nestjs/platform-fastify': 9.1.4_7483038ba1baaf1fbf9705bb6364bf0a
@@ -580,6 +582,13 @@ packages:
     dependencies:
       fast-querystring: 1.0.0
       fastify-plugin: 4.3.0
+    dev: false
+
+  /@fastify/helmet/10.0.2:
+    resolution: {integrity: sha512-gljMbmHJbH85DUfZKN982Pg1hwzX/5Bcizduf1pdjh2uuOqjsqEc49ExSk6U3VNqqTlpm8e+hMaVDSJg2AUrGQ==}
+    dependencies:
+      fastify-plugin: 4.3.0
+      helmet: 6.0.0
     dev: false
 
   /@fastify/middie/8.0.0:
@@ -2774,6 +2783,11 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
+
+  /helmet/6.0.0:
+    resolution: {integrity: sha512-FO9RpR1wNJepH/GbLPQVtkE2eESglXL641p7SdyoT4LngHFJcZheHMoyUcjCZF4qpuMMO1u5q6RK0l9Ux8JBcg==}
+    engines: {node: '>=14.0.0'}
+    dev: false
 
   /hexoid/1.0.0:
     resolution: {integrity: sha512-QFLV0taWQOZtvIRIAdBChesmogZrtuXvVWsFHZTk2SU+anspqZ2vMnoLg7IE1+Uk16N19APic1BuF8bC8c2m5g==}

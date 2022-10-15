@@ -1,4 +1,5 @@
 import compression from '@fastify/compress';
+import helmet from '@fastify/helmet';
 import { NestFactory } from '@nestjs/core';
 import {
   FastifyAdapter,
@@ -12,6 +13,7 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
   //For high-traffic websites in production compression should be on reverse proxy and not app server, see https://docs.nestjs.com/techniques/compression
+  await app.register(helmet);
   await app.register(compression, { encodings: ['gzip', 'deflate'] });
   await app.listen(3000);
 }
