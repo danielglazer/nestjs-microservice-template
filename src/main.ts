@@ -7,6 +7,8 @@ import {
 } from '@nestjs/platform-fastify';
 import { AppModule } from './app.module';
 
+declare const module: any;
+
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
@@ -16,5 +18,10 @@ async function bootstrap() {
   await app.register(helmet);
   await app.register(compression, { encodings: ['gzip', 'deflate'] });
   await app.listen(3000);
+
+  if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => app.close());
+  }
 }
 bootstrap();
